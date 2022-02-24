@@ -1,0 +1,95 @@
+# This is sample slide
+
+# Site metadata (OGP, title, ...)
+[meta]
+title= "Sample Slide for tomlide"
+og_url = "https://example.com/"
+og_title = "Sample Slide for tomlide"
+og_image = "https://example.com/example.v1.png"
+og_image_width = "600"
+og_image_height = "300"
+og_image_description = "Simple slide generator, description maybe include < or >"
+# twitter_card: summary | summary_large_image
+twitter_card = "summary_large_image"
+# twitter_creator: @<username>
+twitter_creator = "@kaito_tateyama"
+# twitter_image: cache by Twitter, change url when change twitter image.
+twitter_image = "https://example.com/example.v1.png"
+# icon: .png | .ico
+icon = "https://example.com/example.icon.png"
+
+[[slide]]
+title = "Sample Slide for tomlide"
+text = """
+Twitter: @kaito_tateyama
+"""
+
+[[slide]]
+title = "First Page"
+text = """
+Hello, this is sample page for tomlide.
+This is sample text. <div>hello</div>
+こんにちは。これはサンプルスライドです。
+"""
+
+[[slide]]
+title = "Second Page - 2枚目"
+text = """
+tomlide is simple toml-based slide generator.
+"""
+
+[[slide]]
+title = "Link Page"
+text = """
+Hello, this is link page for tomlide.
+This is simple usage @[link](https://github.com/uta8a/tomlide)
+link alias usage: @[link: Project repository](https://github.com/uta8a/tomlide)
+slide alias usage: @[link: slide 1](@1)
+"hello"
+"""
+
+[[slide]]
+title = "Image Page #1"
+text = """
+Overflow when there are many images.
+@[image](./tomlide.v1.png)
+@[image](https://avatars.githubusercontent.com/u/31395466?v=4)
+@[image: alt and description](https://avatars.githubusercontent.com/u/31395466?v=4)
+@[link: @[image: image inside link](https://github.com/uta8a/tomlide)](./tomlide.v1.png)
+"""
+
+[[slide]]
+title = "Image Page #2"
+text = """
+Image page
+@[image](https://avatars.githubusercontent.com/u/31395466?v=4)
+"""
+
+[[slide]]
+title = "Image Page #3"
+text = """
+Image inside link (Click image!)
+@[link: @[image: image inside link](https://github.com/uta8a/tomlide)](./tomlide.v1.png)
+"""
+
+[[slide]]
+title = "Emoji Page"
+text = """
+Hello, this is emoji page for tomlide.
+I am cry. @[:sob:]
+I am happy! @[:tada:]
+"""
+
+[[slide]]
+title = "Bold Page"
+text = """
+Hello, this is Bold page for tomlide.
+@[*THIS IS BOLD STYLE*]
+"""
+
+[[slide]]
+title = "Thank you!"
+text = """
+Do you have any questions?
+Feel free to ask me. @[link: link to github/discussion](https://github.com/uta8a/tomlide/discussions/3)
+"""
