@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Slide for tomlide</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:title" content="Sample Slide for tomlide>"/>
+    <meta property="og:image" content="https://example.com/example.v1.png"/>
+    <meta property="og:image:width" content="600"/>
+    <meta property="og:image:height" content="300"/>
+    <meta property="og:description" content="Simple slide generator, description maybe include &lt; or &gt;"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@kaito_tateyama"/>
+    <meta name="twitter:image" content="https://example.com/example.v1.png"/>
+    <link rel="icon" href="https://example.com/example.icon.png" />
+
+    <style>
+:root {
+  --font-size: 15px;
+  font-size: var(--font-size);
+}
+html,
+body {
+  font-family: "Avenir Next", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+main {
+  position: relative;
+  border: 5px black solid;
+  box-sizing: border-box;
+  background-color: white;
+  overflow: hidden;
+}
+main h1 {
+  padding-left: 3rem;
+  font-size: 3.2rem;
+}
+main p {
+  padding-left: 3rem;
+  font-size: 2rem;
+}
+
+main .page-number {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
+  opacity: 0.3;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+main img {
+  height: 20rem;
+}
+main img.sld-emoji-text {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+main .sld-em {
+  font-weight: bold;
+}
+main a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: rgb(151, 184, 255);
+}
+
+main a:visited {
+  color: rgb(0, 81, 255);
+}
+main figcaption {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+main a:hover {
+  color: rgb(62, 0, 134);
+}
+
+main #slide-1 * {
+  padding-left: 0;
+}
+main #slide-1 h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+main #slide-1 p {
+  text-align: center;
+  font-size: 3rem;
+}
+
+#background {
+  top: 0;
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(211, 255, 237);
+  z-index: -1;
+}
+    </style>
+  </head>
+<body>
+<main>
+<div id="main"></div>
+  <template id="template-1">
+    <div id="slide-1">
+      <div class="container">
+        <h1>Sample Slide for tomlide</h1>
+                <p>Twitter: @kaito_tateyama</p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 1 / 10</span>
+    </div>
+  </template>
+    <template id="template-2">
+    <div id="slide-2">
+      <div class="container">
+        <h1>First Page</h1>
+                <p>Hello, this is sample page for tomlide.</p>
+<p>This is sample text. &lt;div&gt;hello&lt;/div&gt;</p>
+<p>こんにちは。これはサンプルスライドです。</p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 2 / 10</span>
+    </div>
+  </template>
+    <template id="template-3">
+    <div id="slide-3">
+      <div class="container">
+        <h1>Second Page - 2枚目</h1>
+                <p>tomlide is simple toml-based slide generator.</p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 3 / 10</span>
+    </div>
+  </template>
+    <template id="template-4">
+    <div id="slide-4">
+      <div class="container">
+        <h1>Link Page</h1>
+                <p>Hello, this is link page for tomlide.</p>
+<p>This is simple usage <a href="https://github.com/uta8a/tomlide" target="_blank" rel="noopener">https://github.com/uta8a/tomlide</a></p>
+<p>link alias usage: <a href="https://github.com/uta8a/tomlide" target="_blank" rel="noopener">Project repository</a></p>
+<p>slide alias usage: <a href="/#1" target="_blank" rel="noopener">slide 1</a></p>
+<p>&quot;hello&quot;</p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 4 / 10</span>
+    </div>
+  </template>
+    <template id="template-5">
+    <div id="slide-5">
+      <div class="container">
+        <h1>Image Page #1</h1>
+                <p>Overflow when there are many images.</p>
+<p><img src="./tomlide.v1.png" class="sld-left"/></p>
+<p><img src="https://avatars.githubusercontent.com/u/31395466?v=4" class="sld-left"/></p>
+<p><figure><img src="https://avatars.githubusercontent.com/u/31395466?v=4" class="sld-left" alt="alt and description"/><figcaption>alt and description</figcaption></figure></p>
+<p><a href="https://github.com/uta8a/tomlide" target="_blank" rel="noopener"><figure><img src="./tomlide.v1.png" class="sld-left" alt="image inside link</a>"/><figcaption>image inside link</a></figcaption></figure></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 5 / 10</span>
+    </div>
+  </template>
+    <template id="template-6">
+    <div id="slide-6">
+      <div class="container">
+        <h1>Image Page #2</h1>
+                <p>Image page</p>
+<p><img src="https://avatars.githubusercontent.com/u/31395466?v=4" class="sld-left"/></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 6 / 10</span>
+    </div>
+  </template>
+    <template id="template-7">
+    <div id="slide-7">
+      <div class="container">
+        <h1>Image Page #3</h1>
+                <p>Image inside link (Click image!)</p>
+<p><a href="https://github.com/uta8a/tomlide" target="_blank" rel="noopener"><figure><img src="./tomlide.v1.png" class="sld-left" alt="image inside link</a>"/><figcaption>image inside link</a></figcaption></figure></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 7 / 10</span>
+    </div>
+  </template>
+    <template id="template-8">
+    <div id="slide-8">
+      <div class="container">
+        <h1>Emoji Page</h1>
+                <p>Hello, this is emoji page for tomlide.</p>
+<p>I am cry. <img src="./1f62d.svg" class="sld-emoji-text"/></p>
+<p>I am happy! <img src="./1f389.svg" class="sld-emoji-text"/></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 8 / 10</span>
+    </div>
+  </template>
+    <template id="template-9">
+    <div id="slide-9">
+      <div class="container">
+        <h1>Bold Page</h1>
+                <p>Hello, this is Bold page for tomlide.</p>
+<p><span class="sld-em">THIS IS BOLD STYLE</span></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 9 / 10</span>
+    </div>
+  </template>
+    <template id="template-10">
+    <div id="slide-10">
+      <div class="container">
+        <h1>Thank you!</h1>
+                <p>Do you have any questions?</p>
+<p>Feel free to ask me. <a href="https://github.com/uta8a/tomlide/discussions/3" target="_blank" rel="noopener">link to github/discussion</a></p>
+<p></p>      </div>
+      <span class="page-number">Sample Slide for tomlide - 10 / 10</span>
+    </div>
+  </template>
+  </main>
+<div id="background"></div>
+<script>
+// deno-lint-ignore-file no-window-prefix
+
+const resizeWindow = () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  document.querySelector("html").style.setProperty(
+    "--font-size",
+    `${1.1 * width / 100}px`,
+  );
+  if (16 * height > 9 * width) {
+    document.querySelector("main").style.width = `${width * 0.8}px`;
+    document.querySelector("main").style.left = `${width * 0.1}px`;
+    document.querySelector("main").style.height = `${width * 0.8 * 9 / 16}px`;
+    document.querySelector("main").style.top = `${
+      height / 2 - width * 0.8 * 9 / 16 / 2
+    }px`;
+  } else {
+    document.querySelector("main").style.height = `${height * 0.8}px`;
+    document.querySelector("main").style.top = `${height * 0.1}px`;
+    document.querySelector("main").style.width = `${height * 0.8 * 16 / 9}px`;
+    document.querySelector("main").style.left = `${
+      width / 2 - height * 0.8 * 16 / 9 / 2
+    }px`;
+  }
+};
+
+/* Simple hash router */
+const router = (path) => {
+  if (path === "") {
+    path = "#1";
+  }
+  const template = document.querySelector(`#template-${path.replace("#", "")}`);
+  if (template !== null) {
+    return template.innerHTML;
+  } else {
+    return `<h1>404</h1><p><a href='/'>Top page</a></p>`;
+  }
+};
+const render = (path) => {
+  try {
+    document.querySelector("#main")
+      .innerHTML = router(path);
+  } catch {
+    document.querySelector("#main")
+      .innerHTML = router("-1"); // 404
+  }
+};
+window.addEventListener("hashchange", function () {
+  render(window.location.hash);
+});
+window.addEventListener("DOMContentLoaded", function (_ev) {
+  resizeWindow();
+  render(window.location.hash);
+});
+
+/* Keydown left/right arrow then change route hash */
+const right = (s) => {
+  if (s === "") {
+    s = "#1";
+  }
+  const num = parseInt(s.replace("#", ""));
+  const template = document.querySelector(`#template-${num}`);
+  const template2 = document.querySelector(`#template-${num + 1}`);
+  if (template === null || template2 === null) {
+    return s;
+  }
+  return `#${num + 1}`;
+};
+
+const left = (s) => {
+  const num = parseInt(s.replace("#", ""));
+  const template = document.querySelector(`#template-${num}`);
+  const template2 = document.querySelector(`#template-${num - 1}`);
+  if (template === null || template2 === null) {
+    return s;
+  }
+  return `#${num - 1}`;
+};
+
+document.addEventListener("keydown", function logKey(e) {
+  if (e.code == "ArrowRight") {
+    window.location.hash = right(window.location.hash);
+  }
+});
+
+document.addEventListener("keydown", function logKey(e) {
+  if (e.code == "ArrowLeft") {
+    window.location.hash = left(window.location.hash);
+  }
+});
+
+document.addEventListener("click", function (e) {
+  const width = window.innerWidth;
+  const x = e.pageX;
+  if (x < width / 10) {
+    window.location.hash = left(window.location.hash);
+  }
+  if (x > width * 9 / 10) {
+    window.location.hash = right(window.location.hash);
+  }
+});
+
+/* resize slide */
+function resize(_e) {
+  resizeWindow();
+}
+window.onresize = resize;
+</script>
+</body>
+</html>
